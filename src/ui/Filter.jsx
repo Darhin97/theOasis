@@ -41,7 +41,8 @@ const Filter = ({ filterField, options }) => {
 
   function handleClick(value) {
     searchParams.set(filterField, value);
-    setSearchParams(searchParams);
+
+    if (searchParams.get("page")) searchParams.set("page", 1);
   }
   return (
     <StyledFilter>
